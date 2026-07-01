@@ -710,6 +710,9 @@ let apoth_items = [
         event.create('nightshade_extract', 'basic').texture('minecraft:item/netherite_scrap').rarity('epic').displayName('§5Nightshade Extract')
         event.create('nightshade_ingot', 'basic').texture('minecraft:item/netherite_ingot').rarity('epic').displayName('§5Nightshade Ingot')
 
+        // ---- Awakened Maelstrom (source item for the [Omega] Awakened Thunderstorm Staff) ----
+        event.create('awakened_maelstrom', 'basic').texture('minecraft:item/heart_of_the_sea').rarity('epic').displayName('§b§lAwakened Maelstrom')
+
         event.create('mike_vick', 'basic').texture('kubejs:item/pet_fight').rarity('common').displayName('Pet Fight')
         event.create('mike_vick_wager', 'basic').texture('kubejs:item/pet_fight_wager').rarity('common').displayName('Pet Fight with Wager')
 
