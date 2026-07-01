@@ -704,7 +704,12 @@ let apoth_items = [
                 event.create(`tier_${bt}_${c.key}_box`, 'basic').texture(c.tex).rarity('rare').displayName(`${TIER_COLOR_R[bt]}Tier ${TIER_ROMAN_R[bt]} ${c.name} Box`)
             })
         }
-        
+
+        // ---- Nightshade modular materials (source items for the Eternal Night Claw; reuse netherite texture) ----
+        event.create('nightshade_essence', 'basic').texture('minecraft:item/netherite_scrap').rarity('epic').displayName('§5Nightshade Essence')
+        event.create('nightshade_extract', 'basic').texture('minecraft:item/netherite_scrap').rarity('epic').displayName('§5Nightshade Extract')
+        event.create('nightshade_ingot', 'basic').texture('minecraft:item/netherite_ingot').rarity('epic').displayName('§5Nightshade Ingot')
+
         event.create('mike_vick', 'basic').texture('kubejs:item/pet_fight').rarity('common').displayName('Pet Fight')
         event.create('mike_vick_wager', 'basic').texture('kubejs:item/pet_fight_wager').rarity('common').displayName('Pet Fight with Wager')
 
