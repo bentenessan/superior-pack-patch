@@ -1,3 +1,5 @@
+[2026-07-01 21:20] Compounded gems: remove raw movement speed (keep swim/attack/draw/mining/arrow)
+
 [2026-07-01 initial] Patch system set up. Included the recent client-relevant
 scripts (Boss Token currencies, tier reward shop, mob chunk cap). Run the
 updater once to sync, then restart Minecraft.
