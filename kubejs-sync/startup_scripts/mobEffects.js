@@ -11,6 +11,14 @@ global.mage_effects = [
     'geo',
 ]
 StartupEvents.registry('mob_effect', event => {
+    // [Omega] Thunderstorm — aura buff; while active, lightning strikes nearby enemies every
+    // 0.25s (behavior in server_scripts/Mechanics/omega_thunderstorm.js). Marker effect.
+    event.create('omega_thunderstorm')
+        .color(0x66CCFF)
+        .beneficial()
+        .displayName('[Omega] Thunderstorm')
+        .formattedDisplayName('§b[Omega] Thunderstorm')
+
     event.create('glacial_grasp') // 25% chance to freeze attackers when they hit you. Attacking frozen enemies has a 25% chance to give you a stacking regeneration effect
         .color(0xADD8E6) // Sets the color of the Effect's Particles.
         .beneficial() // Categorizes the Effect as Beneficial.

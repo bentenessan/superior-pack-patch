@@ -1,3 +1,5 @@
+[2026-07-02 00:55] [Omega] Thunderstorm buff registration
+
 [2026-07-02 00:23] Eternal Night Claw: register 3 Nightshade source items
 
 [2026-07-01 21:20] Compounded gems: remove raw movement speed (keep swim/attack/draw/mining/arrow)
