@@ -1,0 +1,327 @@
+// Client-only. Forge 1.20.1 KubeJS.
+// Sends client input to server with low network spam.
+//
+// Channels used (server-side listeners already exist):
+// - 'keyPress'  -> { key: 'w'|'a'|'s'|'d', state: 'down'|'up' }
+// - 'rightClick'/'leftClick' -> { pressed: 0|1 } (latched)
+// - 'click'     -> { key: 'left_click'|'right_click', state: 'down'|'held'|'up', duration: <ticks> }
+// - 'heldRight_clickedLeft' -> (no payload)
+// - 'jumpTicksAgo' -> { ticks: <number> } (used by server inAir())
+
+
+
+
+
+/**
+ * 
+ * ClientEvents.tick(event => {
+  let player = event.player
+  if (!player) return
+  let wPress = Client.options.keyUp.isDown()
+  player.tell('wPress: ' + wPress)
+  let sPress = Client.options.keyDown.isDown()
+  player.tell('sPress: ' + sPress)
+  let aPress = Client.options.keyLeft.isDown()
+  player.tell('aPress: ' + aPress)
+  let dPress = Client.options.keyRight.isDown()
+  player.tell('dPress: ' + dPress)
+  if (wPress) player.sendData('keyPress', { key: 'w', state: 'down' })
+  if (sPress) player.sendData('keyPress', { key: 's', state: 'down' })
+  if (aPress) player.sendData('keyPress', { key: 'a', state: 'down' })
+  if (dPress) player.sendData('keyPress', { key: 'd', state: 'down' })
+})
+ * 
+ */
+
+
+
+
+let CONFIG = {
+  clickHeldUpdateEveryTicks: 5,
+  jumpWindowTicks: 8,
+}
+
+let MOVEMENT_KEYS = ['w', 'a', 's', 'd']
+
+let state = {
+  playerUuid: null,
+  initialized: false,
+
+  movementDown: { w: false, a: false, s: false, d: false },
+
+  // heldRight_clickedLeft gate
+  useGateArmed: false,
+  attackWasDown: false,
+
+  // rightClick / leftClick (latched 0/1)
+  lastSentLatched: { rightClick: null, leftClick: null },
+
+  // click channel state (duration tracking)
+  clickDown: { left_click: false, right_click: false },
+  clickDuration: { left_click: 0, right_click: 0 },
+
+  // jump tracking
+  jumpWasDown: false,
+  jumpLastPressedTick: null,
+  jumpSentEnd: false,
+}
+
+function resetStateForPlayer(playerUuid) {
+  state.playerUuid = playerUuid
+  state.initialized = false
+
+  state.movementDown.w = false
+  state.movementDown.a = false
+  state.movementDown.s = false
+  state.movementDown.d = false
+
+  state.useGateArmed = false
+  state.attackWasDown = false
+
+  state.lastSentLatched.rightClick = null
+  state.lastSentLatched.leftClick = null
+
+  state.clickDown.left_click = false
+  state.clickDown.right_click = false
+  state.clickDuration.left_click = 0
+  state.clickDuration.right_click = 0
+
+  state.jumpWasDown = false
+  state.jumpLastPressedTick = null
+  state.jumpSentEnd = false
+}
+
+function isMappingDown(mapping) {
+  if (!mapping) return false
+  try {
+    // KeyMapping#isDown()
+    return !!mapping.isDown()
+  } catch (e) {
+    // ignore
+  }
+  try {
+    // some wrappers use isPressed()
+    return !!mapping.isPressed()
+  } catch (e2) {
+    // ignore
+  }
+  return false
+}
+
+function sendKeyPress(player, key, downNow) {
+  player.sendData('keyPress', { key: key, state: downNow ? 'down' : 'up' })
+}
+
+function sendLatchedPress(player, channel, downNow) {
+  let pressed = downNow ? 1 : 0
+  if (state.lastSentLatched[channel] === pressed) return
+  state.lastSentLatched[channel] = pressed
+  player.sendData(channel, { pressed: pressed })
+}
+
+function sendClick(player, key, clickState, duration) {
+  player.sendData('click', { key: key, state: clickState, duration: duration })
+}
+
+function getMovementDown(player, options) {
+  let result = { w: false, a: false, s: false, d: false }
+
+  // Prefer player.input (more reliable than guessing option field names)
+  let input = null
+  try {
+    input = player.input
+  } catch (e) {
+    input = null
+  }
+
+  if (input) {
+    let hasFlags = false
+    try { if (typeof input.up === 'boolean') hasFlags = true } catch (e) {}
+    try { if (typeof input.down === 'boolean') hasFlags = true } catch (e) {}
+    try { if (typeof input.left === 'boolean') hasFlags = true } catch (e) {}
+    try { if (typeof input.right === 'boolean') hasFlags = true } catch (e) {}
+
+    if (hasFlags) {
+      try { result.w = !!input.up } catch (e) {}
+      try { result.s = !!input.down } catch (e) {}
+      try { result.a = !!input.left } catch (e) {}
+      try { result.d = !!input.right } catch (e) {}
+      return result
+    }
+
+    // Fallback: impulses (leftImpulse/forwardImpulse), if present
+    let forward = NaN
+    let left = NaN
+    try { forward = Number(input.forwardImpulse) } catch (e) {}
+    try { left = Number(input.leftImpulse) } catch (e) {}
+
+    let hasImpulse = !isNaN(forward) || !isNaN(left)
+    if (hasImpulse) {
+      if (!isNaN(forward)) {
+        result.w = forward > 0
+        result.s = forward < 0
+      }
+      if (!isNaN(left)) {
+        result.a = left > 0
+        result.d = left < 0
+      }
+      return result
+    }
+  }
+
+  // Options fallback
+  let forwardKey = options.keyUp
+  let backKey = options.keyDown
+  let leftKey = options.keyLeft
+  let rightKey = options.keyRight
+
+  result.w = isMappingDown(forwardKey)
+  result.s = isMappingDown(backKey)
+  result.a = isMappingDown(leftKey)
+  result.d = isMappingDown(rightKey)
+
+  return result
+}
+
+function syncBaseline(player, options, useDown, attackDown) {
+  let movement = getMovementDown(player, options)
+
+  for (let i = 0; i < MOVEMENT_KEYS.length; i++) {
+    let key = MOVEMENT_KEYS[i]
+    state.movementDown[key] = movement[key]
+    sendKeyPress(player, key, movement[key])
+  }
+
+  sendLatchedPress(player, 'rightClick', useDown)
+  sendLatchedPress(player, 'leftClick', attackDown)
+
+  // Click channel baseline (clear stale server state)
+  state.clickDown.right_click = useDown
+  state.clickDown.left_click = attackDown
+  state.clickDuration.right_click = useDown ? 1 : 0
+  state.clickDuration.left_click = attackDown ? 1 : 0
+  sendClick(player, 'right_click', useDown ? 'held' : 'up', state.clickDuration.right_click)
+  sendClick(player, 'left_click', attackDown ? 'held' : 'up', state.clickDuration.left_click)
+
+  // Jump baseline
+  if (Client.level) {
+    player.sendData('jumpTicksAgo', { ticks: 20 })
+  }
+
+  // Gate baseline
+  state.useGateArmed = useDown && !attackDown
+  state.attackWasDown = attackDown
+}
+
+function updateClickDuration(player, clickKey, downNow) {
+  let wasDown = state.clickDown[clickKey]
+  let duration = state.clickDuration[clickKey]
+
+  // pressed
+  if (downNow && !wasDown) {
+    state.clickDown[clickKey] = true
+    duration = 1
+    state.clickDuration[clickKey] = duration
+    sendClick(player, clickKey, 'down', duration)
+    return
+  }
+
+  // held
+  if (downNow && wasDown) {
+    duration += 1
+    state.clickDuration[clickKey] = duration
+    if (duration % CONFIG.clickHeldUpdateEveryTicks === 0) {
+      sendClick(player, clickKey, 'held', duration)
+    }
+    return
+  }
+
+  // released
+  if (!downNow && wasDown) {
+    state.clickDown[clickKey] = false
+    let heldFor = duration
+    state.clickDuration[clickKey] = 0
+    sendClick(player, clickKey, 'up', heldFor)
+    return
+  }
+
+  // cleanup
+  if (!downNow && !wasDown && duration !== 0) {
+    state.clickDuration[clickKey] = 0
+  }
+}
+
+function updateJumpTicksAgo(player, options) {
+  if (!Client.level) return
+
+  let jumpDown = isMappingDown(options.keyJump)
+  let nowTick = Client.level.getTime()
+
+  if (jumpDown && !state.jumpWasDown) {
+    state.jumpLastPressedTick = nowTick
+    state.jumpSentEnd = false
+    player.sendData('jumpTicksAgo', { ticks: 1 })
+  }
+  state.jumpWasDown = jumpDown
+
+  if (state.jumpLastPressedTick !== null && state.jumpSentEnd !== true) {
+    let ticksAgo = nowTick - state.jumpLastPressedTick
+    if (ticksAgo >= CONFIG.jumpWindowTicks) {
+      player.sendData('jumpTicksAgo', { ticks: CONFIG.jumpWindowTicks })
+      state.jumpSentEnd = true
+    }
+  }
+}
+
+ClientEvents.tick(event => {
+  let player = event.player
+  if (!player) return
+
+  let playerUuid = String(player.uuid)
+  if (state.playerUuid !== playerUuid) {
+    resetStateForPlayer(playerUuid)
+  }
+
+  let options = Client.options
+  let useDown = isMappingDown(options.keyUse)
+  let attackDown = isMappingDown(options.keyAttack)
+
+  if (!state.initialized) {
+    state.initialized = true
+    syncBaseline(player, options, useDown, attackDown)
+  }
+
+  // Movement keys (WASD) edge detection
+  let movement = getMovementDown(player, options)
+  for (let i = 0; i < MOVEMENT_KEYS.length; i++) {
+    let key = MOVEMENT_KEYS[i]
+    let downNow = movement[key]
+    let wasDown = state.movementDown[key]
+    if (downNow === wasDown) continue
+    state.movementDown[key] = downNow
+    sendKeyPress(player, key, downNow)
+  }
+
+  // Click latched state (rightClick/leftClick)
+  sendLatchedPress(player, 'rightClick', useDown)
+  sendLatchedPress(player, 'leftClick', attackDown)
+
+  // heldRight_clickedLeft: use held first, then attack click edge
+  if (!useDown) {
+    state.useGateArmed = false
+  } else if (!state.useGateArmed) {
+    if (!attackDown) state.useGateArmed = true
+  } else {
+    if (attackDown && !state.attackWasDown) {
+      player.sendData('heldRight_clickedLeft')
+    }
+  }
+  state.attackWasDown = attackDown
+
+  // click channel (duration tracking)
+  updateClickDuration(player, 'left_click', attackDown)
+  updateClickDuration(player, 'right_click', useDown)
+
+  // jumpTicksAgo (server inAir helper)
+  updateJumpTicksAgo(player, options)
+})

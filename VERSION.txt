@@ -1,0 +1,3 @@
+[2026-07-01 initial] Patch system set up. Included the recent client-relevant
+scripts (Boss Token currencies, tier reward shop, mob chunk cap). Run the
+updater once to sync, then restart Minecraft.

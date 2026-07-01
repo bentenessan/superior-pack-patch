@@ -1,0 +1,91 @@
+// Detects the player's *bound Jump key* press on the CLIENT and notifies the server.
+// Forge 1.20.1: Minecraft.getInstance().options.keyJump is a KeyMapping.
+
+function tryCallBool(obj, methodNames) {
+  for (let i = 0; i < methodNames.length; i++) {
+    let m = methodNames[i]
+    try {
+      let fn = obj[m]
+      if (fn) return !!fn.call(obj)
+    } catch (e) {}
+  }
+  return false
+}
+
+// Gate so we only fire once per physical press (until released)
+let jumpGateDown = false
+
+ClientEvents.tick(event => {
+  let mc = Minecraft.getInstance()
+  if (!mc) return
+
+  let player = mc.player
+  if (!player) return
+
+  let keyJump = mc.options.keyJump
+  if (!keyJump) return
+
+  // We always track "down" to know when the key is released.
+  let isDown = tryCallBool(keyJump, ['isDown', 'isPressed'])
+
+  // If key is not down, reset the gate and do nothing.
+  if (!isDown) {
+    jumpGateDown = false
+    return
+  }
+
+  // If we're already gated for this hold, do nothing.
+  if (jumpGateDown) return
+
+  // Now we know: key is down AND we haven't fired for this press yet.
+  // Confirm an actual "press" event:
+  // - prefer consumeClick() if it exists (good for real press events)
+  // - otherwise edge-detect based on the gate we already have
+  let pressed = tryCallBool(keyJump, ['consumeClick']) || true
+
+  if (pressed) {
+    jumpGateDown = true
+    player.sendData('kubejs:jump_pressed')
+  }
+})
+
+
+
+
+
+// Gate so we only fire once per physical press (until released)
+let sprintGateDown = false
+
+ClientEvents.tick(event => {
+  let mc = Minecraft.getInstance()
+  if (!mc) return
+
+  let player = mc.player
+  if (!player) return
+
+  let keySprint = mc.options.keySprint
+  if (!keySprint) return
+
+  // We always track "down" to know when the key is released.
+  let isDown = tryCallBool(keySprint, ['isDown', 'isPressed'])
+
+  // If key is not down, reset the gate and do nothing.
+  if (!isDown) {
+    sprintGateDown = false
+    return
+  }
+
+  // If we're already gated for this hold, do nothing.
+  if (sprintGateDown) return
+
+  // Now we know: key is down AND we haven't fired for this press yet.
+  // Confirm an actual "press" event:
+  // - prefer consumeClick() if it exists (good for real press events)
+  // - otherwise edge-detect based on the gate we already have
+  let pressed = tryCallBool(keySprint, ['consumeClick']) || true
+
+  if (pressed) {
+    sprintGateDown = true
+    player.sendData('kubejs:sprint_pressed')
+  }
+})

@@ -1,0 +1,54 @@
+// Ensure exists on client
+global.ModularTooltips = global.ModularTooltips || {}
+
+// Helper: render one tooltip in the old style
+function renderModularTooltip(event, text, data) {
+  let line = 1
+
+  if (data.weaponDescription || data.armorDescription) {
+    text.add(line++, [Text.of(`Modular Equipment Effect:`).yellow()])
+
+    if (data.weaponDescription && data.weaponDescription.includes(':')) {
+      let [k, v] = data.weaponDescription.split(':', 2)
+      text.add(line++, [Text.of(` • ${k}:`).gold(), Text.of(`${v}`).gray()])
+    }
+
+    if (data.armorDescription && data.armorDescription.includes(':')) {
+      let [k, v] = data.armorDescription.split(':', 2)
+      text.add(line++, [Text.of(` • ${k}:`).gold(), Text.of(`${v}`).gray()])
+    }
+
+    text.add(line++, [Text.of(` `).gray()])
+  }
+
+  text.add(line++, Text.yellow(`Modular Material`))
+
+  if (!event.ctrl) {
+    text.add(line++, Text.gray(` → Hold `).append(Text.green(`CTRL`)).append(Text.gray(` for more details`)))
+    text.add(line++, Text.white(` `))
+    return
+  }
+
+  text.add(line++, [Text.of(` • Hardness: `).gray(), Text.of(`${data.hardness}`).green()])
+  text.add(line++, [Text.of(` • Density: `).gray(), Text.of(`${data.density}`).green()])
+  text.add(line++, [Text.of(` • Flexibility: `).gray(), Text.of(`${data.flexibility}`).green()])
+  text.add(line++, [Text.of(` • Durability: `).gray(), Text.of(`${data.durability}`).green()])
+  text.add(line++, [Text.of(` • Mining Level: `).gray(), Text.of(`${data.mining_level}`).green()])
+  text.add(line++, [Text.of(` • Mining Speed: `).gray(), Text.of(`${data.mining_speed}`).green()])
+  text.add(line++, [Text.of(` `).gray()])
+}
+
+// ONE handler, dynamic lookup per hovered item
+ItemEvents.tooltip(event => {
+  event.addAdvanced(/.*/, (stack, advanced, text) => {
+    let data = global.ModularTooltips[stack.id]
+    if (!data) return
+    renderModularTooltip(event, text, data)
+  })
+})
+
+// Receive server payload and store it (NO reloads)
+NetworkEvents.dataReceived('send_tooltips', event => {
+  if (!event.data) return
+  global.ModularTooltips = event.data
+})

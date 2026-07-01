@@ -1,0 +1,7 @@
+ClientEvents.tick(e => {
+    if(global.hKeySpecial.consumeClick()) e.player.sendData("global.hKeySpecial.consumeClick");
+    if(global.jKeySpecial.consumeClick()) e.player.sendData("global.jKeySpecial.consumeClick");
+    if(global.gKeySpecial.consumeClick()) e.player.sendData("global.gKeySpecial.consumeClick");
+    if(global.kKeySpecial.consumeClick()) e.player.sendData("global.kKeySpecial.consumeClick");
+    if(global.lKeySpecial.consumeClick()) e.player.sendData("global.lKeySpecial.consumeClick");
+});
