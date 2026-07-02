@@ -713,6 +713,21 @@ let apoth_items = [
         // ---- Awakened Maelstrom (source item for the [Omega] Awakened Thunderstorm Staff) ----
         event.create('awakened_maelstrom', 'basic').texture('minecraft:item/heart_of_the_sea').rarity('epic').displayName('§b§lAwakened Maelstrom')
 
+        // ---- Emberforged (source item for the [Omega] fire pilot weapons — Omega weapon SET) ----
+        event.create('emberforged_ingot', 'basic').texture('minecraft:item/blaze_powder').rarity('epic').displayName('§6§lEmberforged Ingot')
+
+        // ---- Omega weapon SET — per-school source items (materials in data/miapi/materials, built by build/build_omega_weapons.py) ----
+        event.create('glacial_ingot', 'basic').texture('minecraft:item/diamond').rarity('epic').displayName('§b§lGlacial Shard')
+        event.create('stormforged_ingot', 'basic').texture('minecraft:item/nether_star').rarity('epic').displayName('§e§lStormforged Ingot')
+        event.create('sanguine_ingot', 'basic').texture('minecraft:item/redstone').rarity('epic').displayName('§4§lSanguine Ingot')
+        event.create('voidforged_ingot', 'basic').texture('minecraft:item/ender_pearl').rarity('epic').displayName('§5§lVoidforged Ingot')
+        event.create('verdant_ingot', 'basic').texture('minecraft:item/emerald').rarity('epic').displayName('§a§lVerdant Ingot')
+        event.create('radiant_ingot', 'basic').texture('minecraft:item/gold_ingot').rarity('epic').displayName('§e§lRadiant Ingot')
+        event.create('arcane_ingot', 'basic').texture('minecraft:item/amethyst_shard').rarity('epic').displayName('§d§lArcane Ingot')
+        event.create('tidebound_ingot', 'basic').texture('minecraft:item/lapis_lazuli').rarity('epic').displayName('§9§lTidebound Ingot')
+        event.create('tectonic_ingot', 'basic').texture('minecraft:item/copper_ingot').rarity('epic').displayName('§6§lTectonic Ingot')
+        event.create('eldritch_ingot', 'basic').texture('minecraft:item/echo_shard').rarity('epic').displayName('§3§lEldritch Ingot')
+
         event.create('mike_vick', 'basic').texture('kubejs:item/pet_fight').rarity('common').displayName('Pet Fight')
         event.create('mike_vick_wager', 'basic').texture('kubejs:item/pet_fight_wager').rarity('common').displayName('Pet Fight with Wager')
 
