@@ -728,6 +728,10 @@ let apoth_items = [
         event.create('tectonic_ingot', 'basic').texture('minecraft:item/copper_ingot').rarity('epic').displayName('§6§lTectonic Ingot')
         event.create('eldritch_ingot', 'basic').texture('minecraft:item/echo_shard').rarity('epic').displayName('§3§lEldritch Ingot')
 
+        // [Omega] Armor Cache — right-click opens into ONE random [Omega] armor piece (logic in
+        // server_scripts/Integrations/miapi/omega_armor.js). Collect caches to assemble a school's set.
+        event.create('omega_armor_cache', 'basic').texture('kubejs:item/gold_crate').rarity('epic').displayName('§6§l[Omega] Armor Cache')
+
         event.create('mike_vick', 'basic').texture('kubejs:item/pet_fight').rarity('common').displayName('Pet Fight')
         event.create('mike_vick_wager', 'basic').texture('kubejs:item/pet_fight_wager').rarity('common').displayName('Pet Fight with Wager')
 

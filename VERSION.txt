@@ -1,3 +1,5 @@
+[2026-07-02 15:51] Omega Armor Cache: register cache item (opens into a random [Omega] armor piece)
+
 [2026-07-02 15:31] Omega armor sets: add per-piece + full-set (Ascendance) tooltips
 
 [2026-07-02 12:34] Omega weapon SET: register 11-school source items (emberforged + glacial/stormforged/sanguine/voidforged/verdant/radiant/arcane/tidebound/tectonic/eldritch ingots)
