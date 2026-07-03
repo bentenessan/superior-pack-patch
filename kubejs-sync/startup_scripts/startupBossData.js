@@ -5,7 +5,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest:  '373D0ED512CF4401',
-        tier: 4,
+        tier: 2,
         quest_before: '6F0A9733096C2427'
     },
     // BOMD
@@ -15,7 +15,7 @@ global.boss_data = {
         size_multiplier: 1.2,
         summoning_stone: true,
         quest: '69C8FC66221D9CDC',
-        tier: 4,
+        tier: 3,
         quest_before: '1AEBB8E13850C930'
     },
     'gauntlet': {
@@ -24,7 +24,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '290FF50CDCCE3F41',
-        tier: 7,
+        tier: 4,
         quest_before: '179FFACB4A154235'
     },
     'obsidilith': {
@@ -33,7 +33,7 @@ global.boss_data = {
         size_multiplier: 1.2,
         summoning_stone: true,
         quest: '09DC9729B4FB7620',
-        tier: 6,
+        tier: 3,
         quest_before: '6C7CADAA319B2D1E'
     },
     'void_blossom': {
@@ -42,7 +42,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '0B0F09F8B971F26E',
-        tier: 3,
+        tier: 2,
         quest_before: '2C7B196961203597'
     },
 
@@ -53,7 +53,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: false,
         quest: '029EC7C0C3337CDD',
-        tier: 2,
+        tier: 1,
         quest_before: '631028E75892C25F',
         spellcasting: {
             school: 'nature',
@@ -66,7 +66,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '137E29F2112CD72F',
-        tier: 3,
+        tier: 2,
         quest_before: '4862DF5307133129'
     },
     'ur_ghast': {
@@ -75,7 +75,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '0FB6A81A8611D319',
-        tier: 4,
+        tier: 2,
         quest_before: '60BF6443CEDB5C6D',
         spellcasting: {
             school: 'blood',
@@ -89,7 +89,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '726C1D9702E4710D',
-        tier: 3,
+        tier: 2,
         quest_before: '595DB0443B59C067',
         spellcasting: {
             school: 'blood',
@@ -161,7 +161,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '1DDA13F94B37FC4B',
-        tier: 4,
+        tier: 2,
         quest_before: '28B9101D2C36EC5E'
     },
     'archevoker': {
@@ -188,7 +188,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '0A2366DB9DDCE40D',
-        tier: 10,
+        tier: 4,
         quest_before: '25978E142AF0490A'
     },
     // icemirae:
@@ -198,7 +198,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '1B653E541CA12AC1',
-        tier: 4,
+        tier: 2,
         quest_before: '0876BAD68FA1E10E'
     },
     'maze_mother': {
@@ -207,7 +207,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: false,
         quest: '32C2B987223695F3',
-        tier: 2,
+        tier: 1,
         quest_before: '3A5668F880E8AB59'
     },
 
@@ -217,7 +217,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: false,
         quest: '72E41FFCD15ECC2E',
-        tier: 3,
+        tier: 1,
         quest_before: '163E2CF98E22DDBE',
         spellcasting: {
             school: 'ice',
@@ -231,7 +231,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '56B44D99EB8F6453',
-        tier: 8,
+        tier: 4,
         quest_before: '7C9AAA4775CD7137'
     },
     'leviathan': {
@@ -240,7 +240,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: false,
         quest: '1F8DC1C670C82C88',
-        tier: 9,
+        tier: 4,
         quest_before: '7C37B266D4D43833'
     },
     'ancient_remnant': {
@@ -249,7 +249,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '489953AB8BBB5E52',
-        tier: 8,
+        tier: 4,
         quest_before: '358CCAE51C91F5E1'
     },
     'netherite_monstrosity': {
@@ -258,7 +258,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '0DC0B7B9FA822BA1',
-        tier: 8,
+        tier: 4,
         quest_before: '18FB67FAE0D1F946'
     },
     'harbinger': {
@@ -267,7 +267,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '15064D7C159D0A65',
-        tier: 8,
+        tier: 4,
         quest_before: '0EA06E56DC9CEF57'
     },
     'ender_golem': {
@@ -276,7 +276,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '5A3E0C48D6A9B46F',
-        tier: 5,
+        tier: 3,
         quest_before: '19E8480733F38247',
         spellcasting: {
             school: 'ender',
@@ -289,7 +289,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2C26EDA78A8F7581',
-        tier: 9,
+        tier: 5,
         quest_before: '4E47C8FD400DC15B',
         spellcasting: {
             school: 'ender',
@@ -302,7 +302,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '3E54085EBA31A37B',
-        tier: 9,
+        tier: 4,
         quest_before: '68C1024C4AA1522C'
     },
     'scylla': {
@@ -311,7 +311,7 @@ global.boss_data = {
         size_multiplier: 1.4,
         summoning_stone: true,
         quest: '4CBB4F968B494C1D',
-        tier: 9,
+        tier: 4,
         quest_before: '73D1ADBE7442F30A',
         spellcasting: {
             school: 'ice',
@@ -324,7 +324,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '5E0367DBF6BDB9E5',
-        tier: 4,
+        tier: 2,
         quest_before: '163E2CF98E22DDBE',
         spellcasting: {
             school: 'ice',
@@ -337,7 +337,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '6C6CAF1DA97B1567',
-        tier: 6,
+        tier: 4,
         quest_before: '73D1ADBE7442F30A',
         spellcasting: {
             school: 'ice',
@@ -350,7 +350,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '1D6E036FFE175AB1',
-        tier: 5,
+        tier: 4,
         quest_before: '128C3AD91BFD972E',
         spellcasting: {
             school: 'ice',
@@ -364,7 +364,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2855B486E4D74311',
-        tier: 6,
+        tier: 3,
         quest_before: '125C78750A8EB880'
     },
     'alchemist': {
@@ -373,7 +373,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '1448256C1D62AF0B',
-        tier: 6,
+        tier: 4,
         quest_before: '2DE630808BEFC2BD'
     },
     'arachnarch': {
@@ -382,7 +382,7 @@ global.boss_data = {
         size_multiplier: 1.2,
         summoning_stone: true,
         quest: '6CBE960DBA9F440C',
-        tier: 7,
+        tier: 4,
         quest_before: '2F1863C59AA9BDBF'
     },
     'starlit_crusher': {
@@ -391,7 +391,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: false,
         quest: '2C51D4B1C41746A5',
-        tier: 7,
+        tier: 4,
         quest_before: '3A3079509B4938A1'
     },
     'gorgon': {
@@ -400,7 +400,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '5B9137BABD4FF88D',
-        tier: 2,
+        tier: 1,
         quest_before: '7521F004EE577721'
     },
     'hydra': {
@@ -409,7 +409,7 @@ global.boss_data = {
         size_multiplier: 1.13,
         summoning_stone: true,
         quest: '78216525866DE574',
-        tier: 2,
+        tier: 1,
         quest_before: '7521F004EE577721'
     },
     'cyclops': {
@@ -418,7 +418,7 @@ global.boss_data = {
         size_multiplier: 1.2,
         summoning_stone: true,
         quest: '0702EC751A79509A',
-        tier: 3,
+        tier: 2,
         quest_before: '206C364C51148AF6'
     },
     // Rats
@@ -428,7 +428,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '621864245283BF2C',
-        tier: 5,
+        tier: 3,
         quest_before: '24C5D1506EB74673'
     },
     'neo_ratlantean': {
@@ -437,7 +437,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '06B65BF3A3300F9A',
-        tier: 6,
+        tier: 4,
         quest_before: '73A541A5B554DA0D'
     },
     'dutchrat': {
@@ -446,7 +446,7 @@ global.boss_data = {
         size_multiplier: 1.0,
         summoning_stone: false,
         quest: '3462095A554226BD',
-        tier: 4,
+        tier: 3,
         quest_before: '73A541A5B554DA0D'
     },
     'rat_king': {
@@ -455,7 +455,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '3C6D030765D39681',
-        tier: 2,
+        tier: 1,
         quest_before: '6DE6BF2B1C86CDDA'
     },
     'black_death': {
@@ -464,7 +464,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '387945ED494FB553',
-        tier: 3,
+        tier: 1,
         quest_before: '206C364C51148AF6'
     },
     'rat_baron': {
@@ -483,7 +483,7 @@ global.boss_data = {
         size_multiplier: 1,
         summoning_stone: true,
         quest: '30860054EE822022',
-        tier: 7,
+        tier: 3,
         quest_before: '5387BB1FF837CCF2'
     },
     'hullbreaker': {
@@ -501,7 +501,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '1763D81F2A5D7671',
-        tier: 5,
+        tier: 3,
         quest_before: '39AFF218685B0799',
         spellcasting: {
             school: 'blood',
@@ -514,7 +514,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '04BAD7EF128F74BA',
-        tier: 5,
+        tier: 3,
         quest_before: '30D5FFB431955D3C'
     },
     'magnetron': {
@@ -523,7 +523,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '6B3E0B92FBB5A338',
-        tier: 4,
+        tier: 2,
         quest_before: '1072711A3EF1CC13'
     },
     'tremorzilla': {
@@ -532,7 +532,7 @@ global.boss_data = {
         size_multiplier: 1.2,
         summoning_stone: false,
         quest: '1071D8CC90873734',
-        tier: 10,
+        tier: 4,
         quest_before: '4886D0C7BC796C2B'
     },
     // EEEABS
@@ -551,7 +551,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '394FB9ADAD5EA861',
-        tier: 5,
+        tier: 3,
         quest_before: '00FA6329EA131ED0'
     },
     'immortal_shaman': {
@@ -560,7 +560,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '095969EBA4A70874',
-        tier: 2,
+        tier: 1,
         quest_before: '3B7023313770C879'
     },
     'immortal_executioner': {
@@ -578,7 +578,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '104E6F80229F7BEA',
-        tier: 6,
+        tier: 3,
         quest_before: '02E069DEFE4E3F41'
     },
     'guling_sentinel': {
@@ -587,7 +587,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '726609CE27BB8092',
-        tier: 5,
+        tier: 3,
         quest_before: '515150E7C4049DCA',
         spellcasting: {
             school: 'lightning',
@@ -601,7 +601,7 @@ global.boss_data = {
         size_multiplier: 1.0,
         summoning_stone: true,
         quest: '755DE6F197894E13',
-        tier: 2,
+        tier: 1,
         quest_before: '11BA4993DD693C54'
     },
     'frostmaw': {
@@ -610,7 +610,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '54C554523F833F56',
-        tier: 4,
+        tier: 3,
         quest_before: '114FCC73645E1E46'
     },
     'umvuthi': {
@@ -628,7 +628,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '0169E140AA33C61A',
-        tier: 3,
+        tier: 2,
         quest_before: '1E9EB5B3E07508C1'
     },
     // Queen Bee
@@ -662,7 +662,7 @@ global.boss_data = {
         size_multiplier: 1.2,
         summoning_stone: false,
         quest: '644BC810B936ECC0',
-        tier: 5,
+        tier: 2,
         quest_before: '42D46F351CD183F8'
     },
     'wither': {
@@ -671,7 +671,7 @@ global.boss_data = {
         size_multiplier: 1.4,
         summoning_stone: false,
         quest: '0904F1D843056DCF',
-        tier: 6,
+        tier: 4,
         quest_before: '58FEE4EE62C6E8A6'
     },
     'ender_dragon': {
@@ -680,7 +680,7 @@ global.boss_data = {
         size_multiplier: 1.5,
         summoning_stone: false,
         quest: '',
-        tier: 10,
+        tier: 6,
         quest_before: '14D0056971B748C5'
     },
     // Soulslike weaponry
@@ -717,7 +717,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2E59F78F231DAFE3',
-        tier: 4,
+        tier: 2,
         quest_before: '6035141EB672D20D'
     },
     'decaying_king': {
@@ -726,7 +726,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '5DDC4E9BBB06A7AE',
-        tier: 4,
+        tier: 3,
         quest_before: '0AC977B1BA470D58'
     },
     'moonknight': {
@@ -735,7 +735,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '74FD57FAB4FAF80D',
-        tier: 4,
+        tier: 3,
         quest_before: '0F3B292A34B720DA'
     },
     'day_stalker': {
@@ -753,7 +753,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '1CB18DD5018D0918',
-        tier: 5,
+        tier: 3,
         quest_before: '71A859F071185F0A'
     },
     // From the Shadows
@@ -790,7 +790,7 @@ global.boss_data = {
         size_multiplier: 1.0,
         summoning_stone: true,
         quest: '2ADDB6A3FEA18D18',
-        tier: 2,
+        tier: 1,
         quest_before: '71DA882F2CBEA6B3'
     },
     'kukulkan': {
@@ -799,7 +799,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: false,
         quest: '1268F9BD63033CA6',
-        tier: 2,
+        tier: 1,
         quest_before: '206C364C51148AF6'
     },
 // Galosphere
@@ -820,7 +820,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '1E0263A6663FC9A7',
-        tier: 5,
+        tier: 3,
         quest_before: '386D681DC539AB54'
     },
     'spiritcaller': {
@@ -858,7 +858,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '144B0708FC64C9C7',
-        tier: 9,
+        tier: 4,
         quest_before: '73D1ADBE7442F30A'
     },
     'enraged_dead_king': {
@@ -867,7 +867,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '31E031308D32D0AB',
-        tier: 9,
+        tier: 4,
         quest_before: '25978E142AF0490A',
     },
     //Bosses N Rise
@@ -877,7 +877,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '555AA304F17FAB42',
-        tier: 4,
+        tier: 2,
         quest_before: '386D681DC539AB54'
     },
     'sandworm': {
@@ -886,7 +886,7 @@ global.boss_data = {
         size_multiplier: 1.0,
         summoning_stone: true,
         quest: '02605C9FF0BD9B13',
-        tier: 2,
+        tier: 1,
         quest_before: '47B02C37522091F8'
     },
     'infernal_dragon': {
@@ -895,7 +895,7 @@ global.boss_data = {
         size_multiplier: 1.0,
         summoning_stone: true,
         quest: '0A23ED2E37232F21',
-        tier: 6,
+        tier: 4,
         quest_before: '0DF4C1D97685E64F',
         spellcasting: {
             school: 'fire',
@@ -908,7 +908,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '5EE23757471DF397',
-        tier: 7,
+        tier: 4,
         quest_before: '155C8033AF3253D6',
         spellcasting: {
             school: 'blood',
@@ -922,7 +922,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: false,
         quest: '01351A975F79885F',
-        tier: 1,
+        tier: 4,
         quest_before: '43CF47D88AD346B6'
     },
     'chesed': {
@@ -931,7 +931,7 @@ global.boss_data = {
         size_multiplier: 1.0,
         summoning_stone: false,
         quest: '015B67BE2A095981',
-        tier: 8,
+        tier: 4,
         quest_before: '7104618BFAA5ED39',
         spellcasting: {
             school: 'lightning',
@@ -944,7 +944,7 @@ global.boss_data = {
         size_multiplier: 1.0,
         summoning_stone: false,
         quest: '6D8DAAEFAD091A4E',
-        tier: 9,
+        tier: 4,
         quest_before: '7104618BFAA5ED39',
     },
 
@@ -986,7 +986,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '20C5AE958A065E28',
-        tier: 2,
+        tier: 1,
         quest_before: '75AE21771E0A92BA',
         spellcasting: {
             school: 'blood',
@@ -1067,7 +1067,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2D99A19FF659A2CA',
-        tier: 4,
+        tier: 3,
         quest_before: '386D681DC539AB54',
         spellcasting: {
             school: 'ice',
@@ -1080,7 +1080,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '2238FF53AF6A9E63',
-        tier: 4,
+        tier: 2,
         quest_before: '5B67B1DFF20CCE18',
         spellcasting: {
             school: 'ender',
@@ -1093,7 +1093,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '4C0E0254E5FBB175',
-        tier: 4,
+        tier: 1,
         quest_before: '3B7023313770C879',
     },
     'mutant_hoglin': {
@@ -1102,7 +1102,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '747D3FAA798ED14D',
-        tier: 4,
+        tier: 1,
         quest_before: '206C364C51148AF6',
         spellcasting: {
             school: 'geo',
@@ -1115,7 +1115,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '61E06561D7251BB0',
-        tier: 4,
+        tier: 2,
         quest_before: '17FD7C874A725676',
         spellcasting: {
             school: 'nature',
@@ -1128,7 +1128,7 @@ global.boss_data = {
         size_multiplier: 1.3,
         summoning_stone: true,
         quest: '7F2E0F36B7A24117',
-        tier: 4,
+        tier: 2,
         quest_before: '1ED5F4B91815DF70',
         spellcasting: {
             school: 'fire',
@@ -1143,7 +1143,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '61EDD98F4B6D53FE',
-        tier: 8,
+        tier: 4,
         quest_before: '17546808D81C28F3',
     },
     'the_obliterator': {
@@ -1152,7 +1152,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '10F14383ADD5155F',
-        tier: 9,
+        tier: 4,
         quest_before: '17546808D81C28F3',
     },
     'cloud_golem': {
@@ -1161,7 +1161,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '0B85FE94D2C16D70',
-        tier: 6,
+        tier: 3,
         quest_before: '465CAAA07EBA67F7',
     },
     'ancient_guardian': {
@@ -1170,7 +1170,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '7F77BFB6DE16CFDA',
-        tier: 3,
+        tier: 1,
         quest_before: '7521F004EE577721',
     },
     'dune_sentinel': {
@@ -1179,7 +1179,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '62F6B9FB8BD343C0',
-        tier: 3,
+        tier: 1,
         quest_before: '553A5522D3FEE496',
     },
     'frostbitten_golem': {
@@ -1188,7 +1188,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '6E1FF81EC0FEB55B',
-        tier: 3,
+        tier: 2,
         quest_before: '3FBFA0B96229FE23',
     },
     'overgrown_colossus': {
@@ -1197,7 +1197,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2DD4E713EAC3F0CD',
-        tier: 4,
+        tier: 2,
         quest_before: '1F4F16AC1D6A4CD2',
     },
     'posessed_paladin': {
@@ -1206,7 +1206,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '6F3936251995F05C',
-        tier: 4,
+        tier: 3,
         quest_before: '33B4BBE7E9A5148C',
     },
     'endersent': {
@@ -1215,7 +1215,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2F5EFFC6660A034E',
-        tier: 4,
+        tier: 2,
         quest_before: '45D60BE0AAC36969',
     },
     'shulker_mimic': {
@@ -1224,7 +1224,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '3FE1A76C142BAD6E',
-        tier: 4,
+        tier: 2,
         quest_before: '487A8C9E588BFF99',
     },
     'skeletosaurus': {
@@ -1233,7 +1233,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2E6069E3171B5EE9',
-        tier: 7,
+        tier: 3,
         quest_before: '58B718695551C2CF',
     },
     'lava_eater': {
@@ -1242,7 +1242,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '5DD520EFC1204F45',
-        tier: 4,
+        tier: 2,
         quest_before: '78F8F75AF4A70AD5',
     },
     'withered_abomination': {
@@ -1251,7 +1251,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2199A76CBAC216E0',
-        tier: 5,
+        tier: 3,
         quest_before: '1BBE86E50266E162',
     },
     // Roaring
@@ -1261,7 +1261,7 @@ global.boss_data = {
         size_multiplier: 1.0,
         summoning_stone: true,
         quest: '03FA1FF6AEABB2B4',
-        tier: 7,
+        tier: 4,
         quest_before: '0D705CF0D66BF850',
     },
 
@@ -1286,7 +1286,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2B79D21205BAEBF4',
-        tier: 9,
+        tier: 4,
         quest_before: '4E8D2C819A07897E',
         spellcasting: {
             school: 'blood',

@@ -2,28 +2,25 @@
 // ============================================================================
 // Boss Token economy — shared spec (loads on BOTH client & server).
 //
-// Tiered bosses drop Tier Tokens (killer-only, amount = coarse tier). Tokens buy
-// tiered loot boxes (Gem / Weapon / Armor) in the Superior Shop, SILOED by tier (a Tier-N
-// token only buys Tier-N boxes). 5 coarse tiers collapse the in-game 1-10 tiers,
-// with the Ender Dragon as an exclusive Tier V.
-//   Tier I  = in-game 1-3      Tier IV = in-game 9-10 (except Ender Dragon)
-//   Tier II = in-game 4-6      Tier V  = Ender Dragon ONLY
-//   Tier III= in-game 7-8
-// Box loot pools are intentionally STUBBED until contents are decided.
+// Tiered bosses drop Tier Tokens (killer-only, amount = tier). Tokens buy tiered
+// loot boxes (Gem / Weapon / Armor / Materials) in the Superior Shop, SILOED by tier
+// (a Tier-N token only buys Tier-N boxes). 6 box tiers, assigned per boss by FTB-QUEST
+// PROGRESSION (re-tier 2026-07-03): Box I-IV = general bosses (early -> endgame), Box V =
+// Ender Guardian ONLY, Box VI = Ender Dragon ONLY (the two deepest quests in the pack).
+// The boss `tier` field in startupBossData.js IS the box tier; bossCoarseTier returns it.
 // ============================================================================
 
-global.TIER_TOKEN_TIERS = 5
-global.TIER_ROMAN = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V' }
-global.TIER_TOKEN_COLOR = { 1: '§a', 2: '§b', 3: '§d', 4: '§6', 5: '§c' }  // per-tier name color
+global.TIER_TOKEN_TIERS = 6
+global.TIER_ROMAN = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI' }
+global.TIER_TOKEN_COLOR = { 1: '§a', 2: '§b', 3: '§d', 4: '§6', 5: '§c', 6: '§5' }  // per-tier name color
 
-// in-game tier (1-10) + entity id -> coarse token tier (1-5)
+// The boss `tier` field is now the box tier directly (1..TIER_TOKEN_TIERS), assigned by
+// FTB progression — so a boss just grants its own tier's token (clamped to range).
 global.bossCoarseTier = function (inGameTier, entityId) {
-    if (String(entityId) === 'minecraft:ender_dragon') return 5
-    let t = Number(inGameTier) || 1
-    if (t <= 3) return 1
-    if (t <= 6) return 2
-    if (t <= 8) return 3
-    return 4   // in-game 9-10 (Ender Dragon already caught above)
+    let t = Math.round(Number(inGameTier) || 1)
+    if (t < 1) t = 1
+    if (t > global.TIER_TOKEN_TIERS) t = global.TIER_TOKEN_TIERS
+    return t
 }
 
 // tokens a killer earns from a boss of coarse tier N (currently = N; tunable)
