@@ -35,10 +35,12 @@ global.tierTokenReward = function (coarse) { return Math.max(1, Number(coarse) |
 // DISPLAYS as "Weapon". 'armor' is the split-out box: regular tier-scaled modular armor
 // + rare [Omega] armor on T4/T5 (mirrors the weapon box). Kept in sync with the parallel
 // list in startup_scripts/item_registry.js (TIER_BOX_CATS_R).
+// 'minTier' (optional) restricts a category to tiers >= that value (e.g. Boss Materials T4/T5 only).
 global.TIER_BOX_CATEGORIES = [
-    { key: 'gem',   name: 'Gem',    cost: 5, texture: 'kubejs:item/boxes/rare' },
-    { key: 'gear',  name: 'Weapon', cost: 8, texture: 'kubejs:item/boxes/diamond' },
-    { key: 'armor', name: 'Armor',  cost: 8, texture: 'kubejs:item/boxes/netherite' },
+    { key: 'gem',       name: 'Gem',            cost: 5, texture: 'kubejs:item/boxes/rare' },
+    { key: 'gear',      name: 'Weapon',         cost: 8, texture: 'kubejs:item/boxes/diamond' },
+    { key: 'armor',     name: 'Armor',          cost: 8, texture: 'kubejs:item/boxes/netherite' },
+    { key: 'materials', name: 'Boss Materials', cost: 6, texture: 'kubejs:item/boxes/mythical', minTier: 4 },
 ]
 
 // Flattened box definitions (used by item registry, box handlers, and shop trades).
@@ -47,6 +49,7 @@ global.TIER_BOXES = (function () {
     let out = []
     for (let t = 1; t <= global.TIER_TOKEN_TIERS; t++) {
         global.TIER_BOX_CATEGORIES.forEach(function (c) {
+            if (c.minTier && t < c.minTier) return   // e.g. Boss Materials: T4/T5 only
             out.push({
                 tier: t,
                 cat: c.key,

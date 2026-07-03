@@ -700,10 +700,12 @@ let apoth_items = [
             { key: 'gem', name: 'Gem', tex: 'kubejs:item/boxes/rare' },
             { key: 'gear', name: 'Weapon', tex: 'kubejs:item/boxes/diamond' },
             { key: 'armor', name: 'Armor', tex: 'kubejs:item/boxes/netherite' },
+            { key: 'materials', name: 'Boss Materials', tex: 'kubejs:item/boxes/mythical', minTier: 4 },
         ]
         for (let bt = 1; bt <= 5; bt++) {
             event.create(`tier_${bt}_token`, 'basic').texture('kubejs:item/coin_pouches/common').rarity('uncommon').displayName(`${TIER_COLOR_R[bt]}Tier ${TIER_ROMAN_R[bt]} Boss Token`)
             TIER_BOX_CATS_R.forEach(function (c) {
+                if (c.minTier && bt < c.minTier) return   // e.g. Boss Materials: T4/T5 only
                 event.create(`tier_${bt}_${c.key}_box`, 'basic').texture(c.tex).rarity('rare').displayName(`${TIER_COLOR_R[bt]}Tier ${TIER_ROMAN_R[bt]} ${c.name} Box`)
             })
         }

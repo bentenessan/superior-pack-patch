@@ -1,3 +1,5 @@
+[2026-07-03 12:20] Boss Rewards: add Boss Materials box (T4/T5 only) — omega weapon ingots + tier boss materials
+
 [2026-07-03 12:09] Boss Rewards: split Gear box into Weapon + Armor boxes (Armor = tier-scaled modular armor + rare Omega armor T4/T5)
 
 [2026-07-02 15:51] Omega Armor Cache: register cache item (opens into a random [Omega] armor piece)
