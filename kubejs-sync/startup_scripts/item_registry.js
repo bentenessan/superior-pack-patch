@@ -691,12 +691,15 @@ let apoth_items = [
         event.create('orb_of_muy_bien_reforging', 'basic').texture('kubejs:item/anomaly/reforging').rarity('epic').displayName('§6Orb of Muy Bien Reforging')
         event.create('orb_of_muy_bien_ascension', 'basic').texture('kubejs:item/anomaly/ascension').rarity('epic').displayName('§6Orb of Muy Bien Ascension')
 
-        // ---- Boss Token economy: 5 tier tokens + 10 tier boxes (placeholder textures; boxes stackable) ----
+        // ---- Boss Token economy: 5 tier tokens + 15 tier boxes (placeholder textures; boxes stackable) ----
+        // TIER_BOX_CATS_R MUST stay in sync with TIER_BOX_CATEGORIES in startup_scripts/tier_token_specs.js.
+        // 'gear' = the WEAPON box (item id kept as tier_N_gear_box for back-compat; displays "Weapon").
         const TIER_ROMAN_R = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V' }
         const TIER_COLOR_R = { 1: '§a', 2: '§b', 3: '§d', 4: '§6', 5: '§c' }
         const TIER_BOX_CATS_R = [
             { key: 'gem', name: 'Gem', tex: 'kubejs:item/boxes/rare' },
-            { key: 'gear', name: 'Gear', tex: 'kubejs:item/boxes/diamond' },
+            { key: 'gear', name: 'Weapon', tex: 'kubejs:item/boxes/diamond' },
+            { key: 'armor', name: 'Armor', tex: 'kubejs:item/boxes/netherite' },
         ]
         for (let bt = 1; bt <= 5; bt++) {
             event.create(`tier_${bt}_token`, 'basic').texture('kubejs:item/coin_pouches/common').rarity('uncommon').displayName(`${TIER_COLOR_R[bt]}Tier ${TIER_ROMAN_R[bt]} Boss Token`)

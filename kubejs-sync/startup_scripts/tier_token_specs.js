@@ -3,7 +3,7 @@
 // Boss Token economy — shared spec (loads on BOTH client & server).
 //
 // Tiered bosses drop Tier Tokens (killer-only, amount = coarse tier). Tokens buy
-// tiered loot boxes (Gem / Gear) in the Superior Shop, SILOED by tier (a Tier-N
+// tiered loot boxes (Gem / Weapon / Armor) in the Superior Shop, SILOED by tier (a Tier-N
 // token only buys Tier-N boxes). 5 coarse tiers collapse the in-game 1-10 tiers,
 // with the Ender Dragon as an exclusive Tier V.
 //   Tier I  = in-game 1-3      Tier IV = in-game 9-10 (except Ender Dragon)
@@ -30,9 +30,15 @@ global.bossCoarseTier = function (inGameTier, entityId) {
 global.tierTokenReward = function (coarse) { return Math.max(1, Number(coarse) || 1) }
 
 // Box categories per tier (placeholder token costs — tunable). Add more here later.
+// NOTE: the WEAPON box keeps the internal cat key 'gear' (so its item id stays
+// kubejs:tier_N_gear_box — no migration for boxes already in the economy) but now
+// DISPLAYS as "Weapon". 'armor' is the split-out box: regular tier-scaled modular armor
+// + rare [Omega] armor on T4/T5 (mirrors the weapon box). Kept in sync with the parallel
+// list in startup_scripts/item_registry.js (TIER_BOX_CATS_R).
 global.TIER_BOX_CATEGORIES = [
-    { key: 'gem',  name: 'Gem',  cost: 5, texture: 'kubejs:item/boxes/rare' },
-    { key: 'gear', name: 'Gear', cost: 8, texture: 'kubejs:item/boxes/diamond' },
+    { key: 'gem',   name: 'Gem',    cost: 5, texture: 'kubejs:item/boxes/rare' },
+    { key: 'gear',  name: 'Weapon', cost: 8, texture: 'kubejs:item/boxes/diamond' },
+    { key: 'armor', name: 'Armor',  cost: 8, texture: 'kubejs:item/boxes/netherite' },
 ]
 
 // Flattened box definitions (used by item registry, box handlers, and shop trades).
