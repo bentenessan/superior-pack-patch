@@ -1,3 +1,5 @@
+[2026-07-04 02:19] feat: Muy Dinero gem (+30% coins earned) — Specialty shop 5M; adds gem lang + model
+
 [2026-07-03 22:38] material-keyed thunderstorm aura (server-side)
 
 [2026-07-03 17:23] Boss re-tier: move Draugr Overlord to Box III

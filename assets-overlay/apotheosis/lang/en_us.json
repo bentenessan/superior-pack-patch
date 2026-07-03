@@ -439,6 +439,8 @@
     "item.apotheosis.gem.kubejs:superior/duelist": "Duelist Gem",
     "item.apotheosis.gem.kubejs:superior/muy_bien": "Muy Bien",
     "bonus.kubejs:muy_bien.desc": "%s, %s, %s, %s, and %s",
+    "item.apotheosis.gem.kubejs:superior/muy_dinero": "Muy Dinero",
+    "bonus.kubejs:muy_dinero.desc": "§6+30%% Coins Earned§r, and %s",
     "item.apotheosis.gem.kubejs:superior/sentinel": "Sentinel Gem",
     "item.apotheosis.gem.kubejs:superior/spellweaver": "Spellweaver Gem",
     "item.apotheosis.gem.kubejs:superior/pathfinder": "Pathfinder Gem",
@@ -1188,8 +1190,8 @@
     "item.apotheosis.gem.kubejs:compounded/prospector": "Prospector",
     "item.apotheosis.gem.kubejs:compounded/elementalist": "Elementalist",
     "bonus.kubejs:compounded_3": "%s, %s, %s",
-    "bonus.kubejs:compounded_4": "%s, %s, %s, %s",
     "bonus.kubejs:compounded_5": "%s, %s, %s, %s, %s",
     "bonus.kubejs:compounded_6": "%s, %s, %s, %s, %s, %s",
-    "bonus.kubejs:compounded_7": "%s, %s, %s, %s, %s, %s, %s"
+    "bonus.kubejs:compounded_7": "%s, %s, %s, %s, %s, %s, %s",
+    "bonus.kubejs:compounded_8": "%s, %s, %s, %s, %s, %s, %s, %s"
 }
