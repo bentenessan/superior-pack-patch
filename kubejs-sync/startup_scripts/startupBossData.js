@@ -1286,7 +1286,7 @@ global.boss_data = {
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2B79D21205BAEBF4',
-        tier: 4,
+        tier: 3,
         quest_before: '4E8D2C819A07897E',
         spellcasting: {
             school: 'blood',

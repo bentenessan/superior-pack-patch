@@ -1,3 +1,5 @@
+[2026-07-03 17:23] Boss re-tier: move Draugr Overlord to Box III
+
 [2026-07-03 17:07] Boss re-tier by FTB progression: 6 box tiers (V=Ender Guardian, VI=Ender Dragon); token/box economy expanded to 6 tiers; HP curve rebased
 
 [2026-07-03 14:08] Boss Rewards: Materials box cost 6 -> 30 tokens
