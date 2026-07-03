@@ -40,7 +40,7 @@ global.TIER_BOX_CATEGORIES = [
     { key: 'gem',       name: 'Gem',            cost: 5, texture: 'kubejs:item/boxes/rare' },
     { key: 'gear',      name: 'Weapon',         cost: 8, texture: 'kubejs:item/boxes/diamond' },
     { key: 'armor',     name: 'Armor',          cost: 8, texture: 'kubejs:item/boxes/netherite' },
-    { key: 'materials', name: 'Boss Materials', cost: 6, texture: 'kubejs:item/boxes/mythical', minTier: 4 },
+    { key: 'materials', name: 'Boss Materials', cost: 30, texture: 'kubejs:item/boxes/mythical', minTier: 4 },
 ]
 
 // Flattened box definitions (used by item registry, box handlers, and shop trades).
