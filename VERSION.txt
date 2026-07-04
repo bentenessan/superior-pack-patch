@@ -1,3 +1,5 @@
+[2026-07-04 15:25] Add 6 [Omega] signature sets (modular): Cinderbrute, Crimson Reaver, Tidewarden, Voidwrought, Permafrost, Thornward - signature weapon + material-keyed armor per school
+
 [2026-07-04 11:31] Stormforged set -> Storm Conduit: material-keyed Awakened Maelstrom armor (Overcharge + Ring of Storm), retired lightning greatsword/bow + stormforged_ingot
 
 [2026-07-04 02:19] feat: Muy Dinero gem (+30% coins earned) — Specialty shop 5M; adds gem lang + model
