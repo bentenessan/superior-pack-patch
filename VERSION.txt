@@ -1,3 +1,5 @@
+[2026-07-06 16:46] Ultima Ingot: new kubejs:ultima_ingot item + texture (Gauntlet endless super-boss drop)
+
 [2026-07-04 15:25] Add 6 [Omega] signature sets (modular): Cinderbrute, Crimson Reaver, Tidewarden, Voidwrought, Permafrost, Thornward - signature weapon + material-keyed armor per school
 
 [2026-07-04 11:31] Stormforged set -> Storm Conduit: material-keyed Awakened Maelstrom armor (Overcharge + Ring of Storm), retired lightning greatsword/bow + stormforged_ingot
