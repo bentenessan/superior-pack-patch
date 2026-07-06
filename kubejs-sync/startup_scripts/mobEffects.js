@@ -19,6 +19,15 @@ StartupEvents.registry('mob_effect', event => {
         .displayName('[Omega] Thunderstorm')
         .formattedDisplayName('§b[Omega] Thunderstorm')
 
+    // [Star Shear] — aura buff; while active, falling stars shear nearby hostiles every 0.25s
+    // (behavior in server_scripts/Mechanics/star_shear.js). Ender/cosmic recreation of the
+    // Thunderstorm using Traveloptics' Shear of the Stars look. Marker effect.
+    event.create('star_shear')
+        .color(0x9B4DFF)
+        .beneficial()
+        .displayName('Shear of the Stars')
+        .formattedDisplayName('§5Shear of the Stars')
+
     event.create('glacial_grasp') // 25% chance to freeze attackers when they hit you. Attacking frozen enemies has a 25% chance to give you a stacking regeneration effect
         .color(0xADD8E6) // Sets the color of the Effect's Particles.
         .beneficial() // Categorizes the Effect as Beneficial.
