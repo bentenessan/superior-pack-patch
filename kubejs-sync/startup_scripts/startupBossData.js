@@ -286,8 +286,8 @@ global.boss_data = {
     'ender_guardian': {
         id: 'cataclysm:ender_guardian',//
         health: 100,
-        hp_mult: 10,       // FINAL HP ×10, applied after all scaling (boss_data.js)
-        damage_mult: 5,    // FINAL damage ×5 (attack/arrow/spell power, multiply_total)
+        hp_mult: 100,      // FINAL HP ×100, applied after all scaling (boss_data.js) — was ×10, too easy vs Ultima kit
+        damage_mult: 50,   // FINAL damage ×50 (attack/arrow/spell power, multiply_total) — was ×5
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2C26EDA78A8F7581',
