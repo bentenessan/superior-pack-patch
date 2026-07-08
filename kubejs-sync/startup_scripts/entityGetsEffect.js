@@ -8,7 +8,7 @@ global.EntityEffects = global.EntityEffects || {
 
 ForgeEvents.onEvent('net.minecraftforge.event.entity.living.MobEffectEvent$Added', e => {
   let entity = e.getEntity()
-  if (!entity && !entity.pickable) return
+  if (!entity) return
 
   let inst = e.getEffectInstance()
   if (!inst) return

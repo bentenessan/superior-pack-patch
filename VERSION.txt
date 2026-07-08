@@ -1,3 +1,5 @@
+[2026-07-08 14:58] fix: entityGetsEffect null-guard (startup script)
+
 [2026-07-06 20:53] feat: add Star Shear aura (kubejs:star_shear) — falling-star recreation of the Thunderstorm
 
 [2026-07-06 16:46] Ultima Ingot: new kubejs:ultima_ingot item + texture (Gauntlet endless super-boss drop)
