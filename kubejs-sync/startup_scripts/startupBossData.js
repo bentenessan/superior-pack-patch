@@ -286,6 +286,8 @@ global.boss_data = {
     'ender_guardian': {
         id: 'cataclysm:ender_guardian',//
         health: 100,
+        hp_mult: 10,       // FINAL HP ×10, applied after all scaling (boss_data.js)
+        damage_mult: 5,    // FINAL damage ×5 (attack/arrow/spell power, multiply_total)
         size_multiplier: 1.1,
         summoning_stone: true,
         quest: '2C26EDA78A8F7581',
@@ -677,6 +679,8 @@ global.boss_data = {
     'ender_dragon': {
         id: 'minecraft:ender_dragon',//
         health: 100,
+        hp_mult: 20,       // FINAL HP ×20, applied after all scaling (boss_data.js)
+        damage_mult: 15,   // FINAL damage ×15 (attack/arrow/spell power, multiply_total)
         size_multiplier: 1.5,
         summoning_stone: false,
         quest: '',
