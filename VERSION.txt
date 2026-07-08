@@ -1,3 +1,5 @@
+[2026-07-08 22:09] feat: Ultima twin blades (Sanguine/Gloom) + Elemental Orb Infusion (6 new orbs, icons)
+
 [2026-07-08 19:01] feat: per-boss hp_mult/damage_mult overrides (ender guardian x10/x5, dragon x20/x15)
 
 [2026-07-08 14:58] fix: entityGetsEffect null-guard (startup script)

@@ -691,6 +691,14 @@ let apoth_items = [
         event.create('orb_of_muy_bien_reforging', 'basic').texture('kubejs:item/anomaly/reforging').rarity('epic').displayName('§6Orb of Muy Bien Reforging')
         event.create('orb_of_muy_bien_ascension', 'basic').texture('kubejs:item/anomaly/ascension').rarity('epic').displayName('§6Orb of Muy Bien Ascension')
 
+        // Elemental Orbs — Ultima twin-blade infusions (click onto Sanguine/Gloom; ultima_infusion.js) //
+        event.create('elemental_orb_storm', 'basic').texture('kubejs:item/elemental_orb_storm').rarity('epic').displayName('§eElemental Orb: Storm')
+        event.create('elemental_orb_tide',  'basic').texture('kubejs:item/elemental_orb_tide').rarity('epic').displayName('§3Elemental Orb: Tide')
+        event.create('elemental_orb_fire',  'basic').texture('kubejs:item/elemental_orb_fire').rarity('epic').displayName('§cElemental Orb: Fire')
+        event.create('elemental_orb_frost', 'basic').texture('kubejs:item/elemental_orb_frost').rarity('epic').displayName('§bElemental Orb: Frost')
+        event.create('elemental_orb_earth', 'basic').texture('kubejs:item/elemental_orb_earth').rarity('epic').displayName('§6Elemental Orb: Earth')
+        event.create('elemental_orb_void',  'basic').texture('kubejs:item/elemental_orb_void').rarity('epic').displayName('§5Elemental Orb: Void')
+
         // ---- Boss Token economy: 6 tier tokens + tier boxes (placeholder textures; boxes stackable) ----
         // TIER_BOX_CATS_R MUST stay in sync with TIER_BOX_CATEGORIES in startup_scripts/tier_token_specs.js.
         // 'gear' = the WEAPON box (item id kept as tier_N_gear_box for back-compat; displays "Weapon").

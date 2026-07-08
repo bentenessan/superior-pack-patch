@@ -30,6 +30,13 @@ global.validSpellContainerOrbs = [
 global.validMiscOrbs = [
   'kubejs:orb_of_renewal',
   'kubejs:orb_of_knowledge',
-  'kubejs:orb_of_reflection'
+  'kubejs:orb_of_reflection',
+  // Elemental Orbs — infuse the Ultima twin blades (Sanguine/Gloom); handled by ultima_infusion.js
+  'kubejs:elemental_orb_storm',
+  'kubejs:elemental_orb_tide',
+  'kubejs:elemental_orb_fire',
+  'kubejs:elemental_orb_frost',
+  'kubejs:elemental_orb_earth',
+  'kubejs:elemental_orb_void',
 ]
 
