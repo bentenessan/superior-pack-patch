@@ -679,8 +679,8 @@ global.boss_data = {
     'ender_dragon': {
         id: 'minecraft:ender_dragon',//
         health: 100,
-        hp_mult: 20,       // FINAL HP ×20, applied after all scaling (boss_data.js)
-        damage_mult: 15,   // FINAL damage ×15 (attack/arrow/spell power, multiply_total)
+        hp_mult: 60,       // FINAL HP ×60, applied after all scaling (boss_data.js)
+        damage_mult: 45,   // FINAL damage ×45 (attack/arrow/spell power, multiply_total)
         size_multiplier: 1.5,
         summoning_stone: false,
         quest: '',
