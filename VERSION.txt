@@ -1,3 +1,5 @@
+[2026-07-10 10:24] uncap all stat attribute caps (1e12) + raise Ender Guardian intake caps (Gauntlet T5)
+
 [2026-07-10 09:36] raise AttributeFix spell power caps (all schools 100 -> 1,000,000)
 
 [2026-07-09 15:46] JEI: list the 8 craftable [Ultima] pieces + Ultima Ingot info page
